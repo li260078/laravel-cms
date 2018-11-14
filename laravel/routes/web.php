@@ -14,5 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/article/index','Article\IndexController@index')->name('article.index');
-Route::resource('/admin','Admin\ResourceController');
+Route::get('/','UserController@index');
+Route::get('register','UserController@register')->name('register');
+Route::get('login','UserController@login')->name('login');
+Route::post('register','UserController@store')->name('register');
+Route::any('/code/send','Util\CodeController@send')->name('code.send');
