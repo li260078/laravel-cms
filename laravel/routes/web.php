@@ -14,8 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/','UserController@index');
+//用户
+Route::get('/','Home\IndexController@index')->name('home.index');
 Route::get('register','UserController@register')->name('register');
 Route::get('login','UserController@login')->name('login');
 Route::post('register','UserController@store')->name('register');
+Route::post('login','UserController@loginForm')->name('login');
+Route::get('logout','UserController@logout')->name('logout');
+Route::get('passwordreser','UserController@passwordReset')->name('passwordreser');
+Route::post('passwordreser','UserController@passwordResetFrom')->name('passwordreser');
+//工具
 Route::any('/code/send','Util\CodeController@send')->name('code.send');
+
+//后台管理
+//Route::get('admin/index','Admin\IndexController@index')->name('admin.index');
+Route::group(['middleware'=>['admin.auth'],'prefix'=>'admin','namespace'=>'Admin','as'=>'admin.'],function (){
+    Route::get('index','IndexController@index')->name('index');
+});

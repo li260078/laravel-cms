@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->unsignedTinyInteger('is_admin')->default(0)->comment('是否是管理员1是,0否');
             $table->string('icon')->default('')->comment('头像');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

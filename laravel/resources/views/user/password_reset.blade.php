@@ -27,31 +27,17 @@
 
             <!-- Heading -->
             <h1 class="display-4 text-center mb-3">
-                用户注册
+                修改密码
             </h1>
 
             <!-- Subheading -->
             <p class="text-muted text-center mb-5">
-                Free access to our dashboard.
+                欢迎来到英雄联盟
             </p>
 
             <!-- Form -->
-            <form method="post" action="{{route('register')}}">
-                @csrf
-                <!-- 用户昵称 -->
-                <div class="form-group">
-
-                    <!-- Label -->
-                    <label>
-                        用户昵称
-                    </label>
-
-                    <!-- Input -->
-                    <input type="text" name="name" class="form-control"  placeholder="请输入用户昵称">
-
-                </div>
-
-
+            <form method="post" action="{{route('passwordreser')}}">
+            @csrf
                 <!-- Email address -->
                 <div class="form-group">
 
@@ -61,7 +47,7 @@
                     </label>
 
                     <!-- Input -->
-                    <input type="email" name="email" class="form-control" value="492316920@qq.com" placeholder="请输入邮箱">
+                    <input type="email" name="email" class="form-control"  placeholder="请输入邮箱">
 
                 </div>
 
@@ -70,7 +56,7 @@
 
                     <!-- Label -->
                     <label>
-                        密码
+                        新密码
                     </label>
 
                     <!-- Input group -->
@@ -131,7 +117,7 @@
 
                 <!-- Submit -->
                 <button class="btn btn-lg btn-block btn-primary mb-3">
-                    注册
+                   提交
                 </button>
 
                 <!-- Link -->
@@ -157,21 +143,7 @@
 <!-- JAVASCRIPT
 ================================================== -->
 
-<!-- Libs JS -->
-<script src="{{asset('org/assets')}}/libs/jquery/dist/jquery.min.js"></script>
-<script src="{{asset('org/assets')}}/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset('org/assets')}}/libs/chart.js/dist/Chart.min.js"></script>
-<script src="{{asset('org/assets')}}/libs/chart.js/Chart.extension.min.js"></script>
-<script src="{{asset('org/assets')}}/libs/highlight/highlight.pack.min.js"></script>
-<script src="{{asset('org/assets')}}/libs/flatpickr/dist/flatpickr.min.js"></script>
-<script src="{{asset('org/assets')}}/libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-<script src="{{asset('org/assets')}}/libs/list.js/dist/list.min.js"></script>
-<script src="{{asset('org/assets')}}/libs/quill/dist/quill.min.js"></script>
-<script src="{{asset('org/assets')}}/libs/dropzone/dist/min/dropzone.min.js"></script>
-<script src="{{asset('org/assets')}}/libs/select2/dist/js/select2.min.js"></script>
 
-<!-- Theme JS -->
-<script src="{{asset('org/assets')}}/js/theme.min.js"></script>
 
 </body>
 </html>
