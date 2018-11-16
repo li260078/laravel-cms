@@ -93,14 +93,20 @@
                     </div>
                 </div>
 
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="remember" id="remember" value="1">
+                    <label class="form-check-label" for="remember">记住我</label>
+                </div>
                 <!-- Submit -->
-                <button class="btn btn-lg btn-block btn-primary mb-3">
+
+                <button class="mt-3 btn btn-lg btn-block btn-primary  mb-3">
                     登录
                 </button>
 
                 <!-- Link -->
-                <div class="text-center">
-                    <small class="text-muted text-center">
+                <div class="text-center ">
+                    <small class="text-muted text-center ">
                        还没有账号?点击 <a href="{{route('register')}}">注册</a>.
                         <a href="{{route('home.index')}}">返回首页</a>
                     </small>

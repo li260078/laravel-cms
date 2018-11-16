@@ -41,7 +41,7 @@ class UserController extends Controller
         ]);
         $credentials = $request->only('email', 'password');
 
-        if (\Auth::attempt($credentials)) {
+        if (\Auth::attempt($credentials ,$request->remember)) {
             // Authentication passed...
             return redirect()->route('home.index')->with('success','登录成功');
         }
