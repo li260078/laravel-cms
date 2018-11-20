@@ -10,7 +10,12 @@ use App\Http\Controllers\Controller;
 
 class ArticleController extends Controller
 {
-
+    public function __construct(){
+        $this->middleware('auth',[
+            //'only'=>['create','store','edit','update','destroy'],
+            'except'=>['index','show']
+        ]);
+    }
     public function index()
     {
 //        $obj=Article::find(1);

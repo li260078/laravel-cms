@@ -30,7 +30,7 @@ class ArticlePolicy
      */
     public function create(User $user)
     {
-        //
+
     }
 
     /**
