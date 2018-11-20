@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
 //用户
 Route::get('/','Home\IndexController@index')->name('home.index');
 Route::get('register','UserController@register')->name('register');
@@ -31,4 +32,10 @@ Route::any('/code/send','Util\CodeController@send')->name('code.send');
 Route::group(['middleware'=>['admin.auth'],'prefix'=>'admin','namespace'=>'Admin','as'=>'admin.'],function (){
     Route::get('index','IndexController@index')->name('index');
     Route::resource('category','CategoryController');
+});
+
+//文章管理
+Route::group(['prefix'=>'home','namespace'=>'Home','as'=>'home.'],function (){
+    Route::get('/','IndexController@index')->name('index');
+    Route::resource('article','ArticleController');
 });

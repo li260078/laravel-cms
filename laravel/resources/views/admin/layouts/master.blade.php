@@ -748,7 +748,7 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.html">
+                    <a class="nav-link active" href="">
                         <i class="fe fe-home"></i> 后台管理
                     </a>
                 </li>
@@ -1104,8 +1104,7 @@
 
                     <!-- Menu -->
                     <div class="dropdown-menu" aria-labelledby="sidebarIconCopy">
-                        <a href="profile-posts.html" class="dropdown-item">个人中心</a>
-                        <a href="settings.html" class="dropdown-item">Settings</a>
+                        <a href="profile-posts.html" class="dropdown-item">{{auth()->user()->name}}</a>
                         <hr class="dropdown-divider">
                         <a href="{{route('login')}}" class="dropdown-item">退出登录</a>
                     </div>
