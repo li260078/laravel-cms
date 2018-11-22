@@ -25,8 +25,21 @@ Route::get('logout','UserController@logout')->name('logout');
 Route::get('passwordreser','UserController@passwordReset')->name('passwordreser');
 Route::post('passwordreser','UserController@passwordResetFrom')->name('passwordreser');
 //工具
-Route::any('/code/send','Util\CodeController@send')->name('code.send');
+Route::group(['prefix'=>'util','namespace'=>'Util','as'=>'util.'],function(){
+    //邮箱
+    Route::any('/code/send','CodeController@send')->name('code.send');
+    //上传
+    Route::any('/upload','UploadController@uoloader')->name('upload');
+    Route::any('/filesLists','UploadController@filesLists')->name('filesLists');
+});
+//会员中心
+Route::group(['prefix'=>'member','namespace'=>'Member','as'=>'member.'],function (){
+    Route::resource('user','UserController');
+    Route::get('attention/{user}','UserController@attention')->name('attention');
+    Route::get('interestList/{user}','UserController@interestList')->name('interestList');
+    Route::get('fanList/{user}','UserController@fanList')->name('fanList');
 
+});
 //后台管理
 //Route::get('admin/index','Admin\IndexController@index')->name('admin.index');
 Route::group(['middleware'=>['admin.auth'],'prefix'=>'admin','namespace'=>'Admin','as'=>'admin.'],function (){

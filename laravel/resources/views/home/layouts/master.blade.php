@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('org/assets')}}/libs/flatpickr/dist/flatpickr.min.css">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Theme CSS -->
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <link rel="stylesheet" href="{{asset('org/assets')}}/css/theme.min.css">
 
     <title>首页</title>
@@ -271,7 +272,7 @@
 
                     <!-- Menu -->
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a href="profile-posts.html" class="dropdown-item">{{auth()->user()->name}}</a>
+                        <a href="{{route('member.user.show',auth()->user())}}" class="dropdown-item">{{auth()->user()->name}}</a>
                         {{--@if(auth()->user()->is_admin==1)--}}
                         @can('view',auth()->user())
                             <a href="{{route('admin.index')}}" class="dropdown-item">后台管理</a>

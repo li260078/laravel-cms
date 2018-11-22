@@ -8,7 +8,7 @@
                    <div class="card" data-toggle="lists" data-lists-values="[&quot;name&quot;]">
                        <div class="card-header">
                            <div class="row align-items-center">
-                               <div class="col">
+                               <div class="col-4">
 
                                    <!-- Title -->
                                    <h4 class="card-header-title">
@@ -16,10 +16,29 @@
                                    </h4>
 
                                </div>
-                               <div class="col">
+                               <div class="col-4">
                                    <a href="{{route('home.article.create')}}" class="card-header-title">
                                        添加文章
                                    </a>
+
+                               </div>
+                               <div class="col-4">
+
+                                       <a class="nav-link dropdown-toggle" href="#!" id="topnavPages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                           筛选
+                                       </a>
+                                       <ul class="dropdown-menu " aria-labelledby="topnavPages">
+                                          @foreach($categories as $categoy)
+                                           <li class="dropright  ">
+                                               <a  href="{{route('home.article.index',['category'=>$categoy['id']])}}" class="dropdown-item sort">
+                                                  {{$categoy['title']}}
+                                               </a>
+
+                                           </li>
+                                           @endforeach
+                                       </ul>
+
+
                                </div>
 
                            </div> <!-- / .row -->
@@ -54,7 +73,7 @@
                                        <div class="col-auto">
 
                                            <!-- Avatar -->
-                                           <a href="#!" class="avatar avatar-sm">
+                                           <a href="{{route('member.user.show',$article->user)}}" class="avatar avatar-sm">
                                                <img src="{{$article->user['icon']}}" alt="..." class="avatar-img rounded">
                                            </a>
 
@@ -63,7 +82,7 @@
 
                                            <!-- Title -->
                                            <h4 class="card-title mb-1 name">
-                                               <a href="#!">{{$article['title']}}</a>
+                                               <a href="{{route('home.article.show',$article)}}">{{$article['title']}}</a>
                                            </h4>
 
                                            <!-- Text -->
@@ -73,7 +92,8 @@
 
                                            <!-- Time -->
                                            <p class="card-text small text-muted">
-                                              {{$article->user['name']}}   <time datetime="2018-01-03">{{$article->created_at->diffForHumans()}}</time>
+                                               <a href="{{route('member.user.show',$article->user)}}">{{$article->user['name']}}</a>
+                                               <time datetime="2018-01-03">{{$article->created_at->diffForHumans()}}</time>
                                            </p>
 
                                        </div>
@@ -114,7 +134,7 @@
 
                        </div>
                    </div>
-                   {{$articles->links()}}
+                   {{$articles->appends(['category'=>Request::query('category')])->links()}}
                </div>
            </div> <!-- / .row -->
        </div>

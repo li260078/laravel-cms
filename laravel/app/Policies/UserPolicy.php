@@ -79,4 +79,8 @@ class UserPolicy
     {
         //
     }
+    //自定义策略
+    public function isMine(User $user, User $model){
+        return $user->id == $model->id;
+    }
 }

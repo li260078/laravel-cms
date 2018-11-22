@@ -16,12 +16,18 @@ class ArticleController extends Controller
             'except'=>['index','show']
         ]);
     }
-    public function index()
+    public function index(Request $request)
     {
 //        $obj=Article::find(1);
 //        dd($obj->user->name);
-        $articles = Article::latest()->paginate(10);
-        return view('home.article.index',compact('articles'));
+        $category=$request->query('category');
+        $articles= Article::latest();
+        if ($category){
+            $articles = $articles->where('category_id',$category);
+        }
+        $articles = $articles->paginate(10);
+        $categories= Category::all();
+        return view('home.article.index',compact('articles','categories'));
     }
 
 
@@ -38,7 +44,7 @@ class ArticleController extends Controller
     {
         $article->title = $request->title;
         $article->category_id = $request->category_id;
-        $article->content = $request->content;
+        $article->content = $request['content'];
         $article->user_id = auth()->id();
         //dd($article->user_id);
         $article->save();
@@ -65,7 +71,7 @@ class ArticleController extends Controller
         $this->authorize('update',$article);
         $article->title = $request->title;
         $article->category_id = $request->category_id;
-        $article->content = $request->content;
+        $article->content = $request['content'];
         //$article->user_id = auth()->id();
         //dd($article->user_id);
         $article->save();
