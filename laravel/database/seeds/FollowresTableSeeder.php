@@ -11,6 +11,6 @@ class FollowresTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Fo::class,100)->create();
+        factory(\App\Models\Followres::class,100)->create();
     }
 }

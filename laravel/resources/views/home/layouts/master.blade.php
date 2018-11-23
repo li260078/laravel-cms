@@ -15,7 +15,7 @@
     <!-- Theme CSS -->
     <meta name="csrf-token" content="{{csrf_token()}}">
     <link rel="stylesheet" href="{{asset('org/assets')}}/css/theme.min.css">
-
+    @stack('css')
     <title>首页</title>
 </head>
 <body>

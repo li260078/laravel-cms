@@ -15,32 +15,30 @@
         <div class="card-body text-center pt-1 pb-2">
             @can('isMine',$user)
             <div class="nav flex-column nav-pills ">
-                <a href="{{route('member.user.edit',[$user,'type'=>'icon'])}}" class="nav-link text-muted">
+                <a href="{{route('member.user.edit',[$user,'type'=>'icon'])}}" class="nav-link text-muted {{active_class(if_route(['member.user.edit']) && if_query('type', 'icon'), 'active', '')}}">
                     修改头像
                 </a>
             </div>
 
             <div class="nav flex-column nav-pills ">
-                <a href="{{route('member.user.edit',[$user,'type'=>'password'])}}" class="nav-link text-muted">
+                <a href="{{route('member.user.edit',[$user,'type'=>'password'])}}" class="nav-link text-muted {{active_class(if_route(['member.user.edit']) && if_query('type', 'password'), 'active', '')}}">
                     修改密码
                 </a>
             </div>
             <div class="nav flex-column nav-pills ">
-                <a href="{{route('member.user.edit',[$user,'type'=>'name'])}}" class="nav-link text-muted">
+                <a href="{{route('member.user.edit',[$user,'type'=>'name'])}}" class="nav-link text-muted {{active_class(if_route(['member.user.edit']) && if_query('type', 'name'), 'active', '')}}">
                     修改昵称
                 </a>
             </div>
             @endcan
             <div class="nav flex-column nav-pills ">
-                <a href="{{route('member.interestList',$user)}}" class="nav-link text-muted">
+                <a href="{{route('member.interestList',$user)}}" class="nav-link text-muted {{active_class(if_route(['member.interestList']) , 'active', '')}}">
                     粉丝列表
                 </a>
-                <a href="{{route('member.fanList',$user)}}" class="nav-link text-muted">
+                <a href="{{route('member.fanList',$user)}}" class="nav-link text-muted {{active_class(if_route(['member.fanList']) , 'active', '')}}">
                     关注列表
                 </a>
-                <a href="" class="nav-link text-muted">
-                    消息中心
-                </a>
+
             </div>
         </div>
     </div>
@@ -63,3 +61,10 @@
         </div>
     </div>
 </div>
+@push('css')
+    <style>
+        .active{
+            color:white!important;
+        }
+    </style>
+@endpush

@@ -4,48 +4,17 @@ namespace App\Http\Controllers\Member;
 
 use App\Models\Article;
 use App\User;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function __construct(){
+        $this->middleware('auth',[
+            'only'=>['edit','update','attention']
+        ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function show(User $user)
     {
         //dd($user);
@@ -71,6 +40,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {       //dd($user);
         //dd($request->all());
+
         $this->authorize('isMine',$user);
         $data=$request->all();
        //$data['password']= bcrypt($data['password']);
@@ -102,12 +72,13 @@ class UserController extends Controller
    }
    public function interestList(User $user){
             //dd($user);
-      $fans= $user->fans;
-      //dd($fans);
+        $fans= $user->fans()->paginate(2);
+        //dd($fans);
         return view('memder.user.interestList',compact('user','fans'));
    }
    public function fanList(User $user){
-       $fans= $user->following;
+        //dd($model);
+       $fans= $user->following()->paginate(2);
        //dd($fans->toArray());
         return view('memder.user.fanList',compact('user','fans'));
    }
