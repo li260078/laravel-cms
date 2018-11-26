@@ -51,4 +51,6 @@ Route::group(['middleware'=>['admin.auth'],'prefix'=>'admin','namespace'=>'Admin
 Route::group(['prefix'=>'home','namespace'=>'Home','as'=>'home.'],function (){
     Route::get('/','IndexController@index')->name('index');
     Route::resource('article','ArticleController');
+    //评论路由
+    Route::resource('comment','CommentController');
 });

@@ -40,7 +40,7 @@
                     </div>
                     @include('home.layouts.comment')
                 </div>
-              
+
             </div>
 
             <div class="col-12 col-xl-3">

@@ -72,13 +72,13 @@ class UserController extends Controller
    }
    public function interestList(User $user){
             //dd($user);
-        $fans= $user->fans()->paginate(2);
+        $fans= $user->fans()->paginate(12);
         //dd($fans);
         return view('memder.user.interestList',compact('user','fans'));
    }
    public function fanList(User $user){
         //dd($model);
-       $fans= $user->following()->paginate(2);
+       $fans= $user->following()->paginate(12);
        //dd($fans->toArray());
         return view('memder.user.fanList',compact('user','fans'));
    }
