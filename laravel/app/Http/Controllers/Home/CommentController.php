@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Comment;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,6 +12,9 @@ class CommentController extends Controller
     public function index(Request $request ,Comment $comment)
     {
         $comments = $comment->with('user')->where('article_id',$request->article_id)->get();
+        foreach ($comments as $comment){
+            $comment->zan_num=$comment->zan->count();
+        }
         //dd($comments->toArray());
         return ['code'=>1,'message'=>'','comments'=>$comments];
     }
@@ -26,6 +29,7 @@ class CommentController extends Controller
         $comment->save();
 
         $comment = $comment->with('user')->find($comment->id);
+        $comment->zan_num=$comment->zan->count();
         return ['code'=>1,'message'=>'','comment'=>$comment];
 
 

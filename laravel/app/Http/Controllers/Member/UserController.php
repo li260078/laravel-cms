@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Member;
 
 use App\Models\Article;
+use App\Models\Zan;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -81,5 +82,13 @@ class UserController extends Controller
        $fans= $user->following()->paginate(12);
        //dd($fans->toArray());
         return view('memder.user.fanList',compact('user','fans'));
+   }
+
+   public function myZan(User $user,Request $request,Zan $zan){
+        $type=$request->query('type');
+          // $data=[];
+           $zansData=$user->zan()->where('zan_type','App\Models\\'.ucfirst($type))->paginate(1);
+          // dd($zansData);
+        return view('memder.user.my_zan_'.$type,compact('user','zansData','zans'));
    }
 }

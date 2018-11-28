@@ -26,7 +26,8 @@
     <div class="container">
 
         <!-- Toggler -->
-        <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -37,10 +38,12 @@
 
         <!-- Form -->
         <form class="form-inline mr-4 d-none d-lg-flex">
-            <div class="input-group input-group-rounded input-group-merge" data-toggle="lists" data-lists-values='["name"]'>
+            <div class="input-group input-group-rounded input-group-merge" data-toggle="lists"
+                 data-lists-values='["name"]'>
 
                 <!-- Input -->
-                <input type="search" class="form-control form-control-prepended  dropdown-toggle search" data-toggle="dropdown" placeholder="Search" aria-label="Search">
+                <input type="search" class="form-control form-control-prepended  dropdown-toggle search"
+                       data-toggle="dropdown" placeholder="Search" aria-label="Search">
                 <div class="input-group-prepend">
                     <div class="input-group-text">
                         <i class="fe fe-search"></i>
@@ -59,7 +62,8 @@
 
                                         <!-- Avatar -->
                                         <div class="avatar">
-                                            <img src="{{asset('org/assets')}}/img/avatars/teams/team-logo-1.jpg" alt="..." class="avatar-img rounded">
+                                            <img src="{{asset('org/assets')}}/img/avatars/teams/team-logo-1.jpg"
+                                                 alt="..." class="avatar-img rounded">
                                         </div>
 
                                     </div>
@@ -72,7 +76,8 @@
 
                                         <!-- Time -->
                                         <p class="small text-muted mb-0">
-                                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>
+                                            <span class="fe fe-clock"></span>
+                                            <time datetime="2018-05-24">Updated 2hr ago</time>
                                         </p>
 
                                     </div>
@@ -84,7 +89,8 @@
 
                                         <!-- Avatar -->
                                         <div class="avatar">
-                                            <img src="{{asset('org/assets')}}/img/avatars/teams/team-logo-2.jpg" alt="..." class="avatar-img rounded">
+                                            <img src="{{asset('org/assets')}}/img/avatars/teams/team-logo-2.jpg"
+                                                 alt="..." class="avatar-img rounded">
                                         </div>
 
                                     </div>
@@ -97,7 +103,8 @@
 
                                         <!-- Time -->
                                         <p class="small text-muted mb-0">
-                                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>
+                                            <span class="fe fe-clock"></span>
+                                            <time datetime="2018-05-24">Updated 2hr ago</time>
                                         </p>
 
                                     </div>
@@ -110,7 +117,8 @@
 
                                         <!-- Avatar -->
                                         <div class="avatar avatar-4by3">
-                                            <img src="{{asset('org/assets')}}/img/avatars/projects/project-1.jpg" alt="..." class="avatar-img rounded">
+                                            <img src="{{asset('org/assets')}}/img/avatars/projects/project-1.jpg"
+                                                 alt="..." class="avatar-img rounded">
                                         </div>
 
                                     </div>
@@ -123,7 +131,8 @@
 
                                         <!-- Time -->
                                         <p class="small text-muted mb-0">
-                                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
+                                            <span class="fe fe-clock"></span>
+                                            <time datetime="2018-05-24">Updated 4hr ago</time>
                                         </p>
 
                                     </div>
@@ -137,7 +146,8 @@
 
                                         <!-- Avatar -->
                                         <div class="avatar avatar-4by3">
-                                            <img src="{{asset('org/assets')}}/img/avatars/projects/project-2.jpg" alt="..." class="avatar-img rounded">
+                                            <img src="{{asset('org/assets')}}/img/avatars/projects/project-2.jpg"
+                                                 alt="..." class="avatar-img rounded">
                                         </div>
 
                                     </div>
@@ -150,7 +160,8 @@
 
                                         <!-- Time -->
                                         <p class="small text-muted mb-0">
-                                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
+                                            <span class="fe fe-clock"></span>
+                                            <time datetime="2018-05-24">Updated 4hr ago</time>
                                         </p>
 
                                     </div>
@@ -164,7 +175,8 @@
 
                                         <!-- Avatar -->
                                         <div class="avatar avatar-4by3">
-                                            <img src="{{asset('org/assets')}}/img/avatars/projects/project-3.jpg" alt="..." class="avatar-img rounded">
+                                            <img src="{{asset('org/assets')}}/img/avatars/projects/project-3.jpg"
+                                                 alt="..." class="avatar-img rounded">
                                         </div>
 
                                     </div>
@@ -177,7 +189,8 @@
 
                                         <!-- Time -->
                                         <p class="small text-muted mb-0">
-                                            <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
+                                            <span class="fe fe-clock"></span>
+                                            <time datetime="2018-05-24">Updated 4hr ago</time>
                                         </p>
 
                                     </div>
@@ -191,7 +204,8 @@
 
                                         <!-- Avatar -->
                                         <div class="avatar">
-                                            <img src="{{asset('org/assets')}}/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                                            <img src="{{asset('org/assets')}}/img/avatars/profiles/avatar-1.jpg"
+                                                 alt="..." class="avatar-img rounded-circle">
                                         </div>
 
                                     </div>
@@ -218,7 +232,8 @@
 
                                         <!-- Avatar -->
                                         <div class="avatar">
-                                            <img src="{{asset('org/assets')}}/img/avatars/profiles/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
+                                            <img src="{{asset('org/assets')}}/img/avatars/profiles/avatar-2.jpg"
+                                                 alt="..." class="avatar-img rounded-circle">
                                         </div>
 
                                     </div>
@@ -250,29 +265,99 @@
         <div class="navbar-user">
 
             <!-- Dropdown -->
-            <div class="dropdown mr-4 d-none d-lg-flex">
+            @auth
+            <div class="dropdown mr-4 d-none d-md-flex">
 
                 <!-- Toggle -->
-                <a href="{{route('home.article.index')}}" class="card-header-title">
-                    文章首页
+                <a href="#" class="text-muted" role="button" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
+                <span class="icon @if(auth()->user()->unreadNotifications()->count() != 0) active @endif">
+                  <i class="fe fe-bell"></i>
+                </span>
                 </a>
+
+
+
 
                 <!-- Menu -->
 
-            </div>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-card">
+                    <div class="card-header">
 
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <!-- Title -->
+                                    <h5 class="card-header-title">
+                                        我的通知
+                                    </h5>
+                                </div>
+                                <div class="col-auto">
+                                    <!-- Link -->
+                                    <a href="{{route('member.notify',auth()->user())}}" class="small">
+                                        查看所有通知
+                                    </a>
+                                </div>
+                            </div> <!-- / .row -->
+
+                    </div> <!-- / .card-header -->
+                    <div class="card-body">
+                        <!-- List group -->
+                        <div class="list-group list-group-flush my--3">
+                            @foreach(auth()->user()->unreadNotifications()->limit(3)->get() as $notification)
+                                <a class="list-group-item px-0" href="{{route('member.notify.show',$notification)}}">
+
+                                    <div class="row">
+                                        <div class="col-auto">
+
+                                            <!-- Avatar -->
+                                            <div class="avatar avatar-sm">
+                                                <img src="{{$notification['data']['user_icon']}}" alt="..."
+                                                     class="avatar-img rounded-circle">
+                                            </div>
+
+                                        </div>
+                                        <div class="col ml--2">
+
+                                            <!-- Content -->
+                                            <div class="small text-muted">
+                                                <strong class="text-body">{{$notification['data']['user_name']}}</strong>评论了
+                                                <strong class="text-body">{{$notification['data']['article_title']}}</strong>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-auto">
+
+                                            <small class="text-muted">
+                                                {{$notification->created_at->diffForHumans()}}
+                                            </small>
+
+                                        </div>
+                                    </div> <!-- / .row -->
+
+                                </a>
+                            @endforeach
+                        </div>
+
+                    </div>
+                </div> <!-- / .dropdown-menu -->
+
+            </div>
+            @endauth
             <!-- Dropdown -->
             <div class="dropdown">
 
                 <!-- Toggle -->
                 @auth()
-                    <a href="#" class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a href="#" class="avatar avatar-sm avatar-online dropdown-toggle" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="{{auth()->user()->icon}}" alt="..." class="avatar-img rounded-circle">
                     </a>
 
                     <!-- Menu -->
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a href="{{route('member.user.show',auth()->user())}}" class="dropdown-item">{{auth()->user()->name}}</a>
+                        <a href="{{route('member.user.show',auth()->user())}}"
+                           class="dropdown-item">{{auth()->user()->name}}</a>
                         {{--@if(auth()->user()->is_admin==1)--}}
                         @can('view',auth()->user())
                             <a href="{{route('admin.index')}}" class="dropdown-item">后台管理</a>
@@ -303,13 +388,21 @@
                         首页
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('home.article.index')}}" class="nav-link">
+                        文章首页
+                    </a>
+                </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#!" id="topnavPages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#!" id="topnavPages" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
                         Pages
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="topnavPages">
                         <li class="dropright">
-                            <a class="dropdown-item dropdown-toggle" href="#!" id="topnavProfile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="dropdown-item dropdown-toggle" href="#!" id="topnavProfile" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Profile
                             </a>
                             <div class="dropdown-menu" aria-labelledby="topnavProfile">
@@ -331,7 +424,8 @@
                             </div>
                         </li>
                         <li class="dropright">
-                            <a class="dropdown-item dropdown-toggle" href="#!" id="topnavProject" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="dropdown-item dropdown-toggle" href="#!" id="topnavProject" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Project
                             </a>
                             <div class="dropdown-menu" aria-labelledby="topnavProject">
@@ -350,7 +444,8 @@
                             </div>
                         </li>
                         <li class="dropright">
-                            <a class="dropdown-item dropdown-toggle" href="#!" id="topnavTeam" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="dropdown-item dropdown-toggle" href="#!" id="topnavTeam" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Team
                             </a>
                             <div class="dropdown-menu" aria-labelledby="topnavTeam">
@@ -414,7 +509,7 @@
 
 @include('layouts.hdjs')
 @include('layouts.message')
-<script >
+<script>
     require(['bootstrap'])
 </script>
 @stack('js')

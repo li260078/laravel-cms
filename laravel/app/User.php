@@ -3,6 +3,8 @@
 namespace App;
 
 use App\Models\Attachment;
+use App\Models\Collect;
+use App\Models\Zan;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -43,6 +45,12 @@ class User extends Authenticatable
     public function following(){
        return $this->belongsToMany(User::class,'followres','following_id','user_id');
 
+    }
+    public function zan(){
+        return $this->hasMany(Zan::class);
+    }
+    public function collect(){
+        return $this->hasMany(Collect::class);
     }
 
 }

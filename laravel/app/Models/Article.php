@@ -13,4 +13,10 @@ class Article extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
+    public function zan(){
+        return $this->morphMany(Zan::class,'zan');
+    }
+    public function collect(){
+        return $this->morphMany(Collect::class,'collect');
+    }
 }

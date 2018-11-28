@@ -21,6 +21,7 @@ class AuthServiceProvider extends ServiceProvider
 
         User::class => UserPolicy::class,
         Article::class=> ArticlePolicy::class
+
     ];
 
     /**

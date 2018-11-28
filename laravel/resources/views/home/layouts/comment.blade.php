@@ -8,7 +8,7 @@
                 <div class="col-auto">
 
                     <!-- Avatar -->
-                    <a class="avatar" href="{{route('member.user.show',)}}">
+                    <a class="avatar" href="">
                         <img :src="v.user.icon" alt="..." class="avatar-img rounded-circle">
                     </a>
 
@@ -31,7 +31,11 @@
 
                                 <!-- Time -->
                                 <time class="comment-time">
-                                    👍 2 |  @{{v.created_at}}
+                                    @auth
+                                        <a href="" @click.prevent="zan(v)">👍 </a> | @{{v.zan_num}} |@{{v.created_at}}
+                                    @else
+                                        <a href="{{route('login',['from'=>url()->full()])}}" >👍 </a>
+                                    @endauth
                                 </time>
 
                             </div>
@@ -78,18 +82,26 @@
     </div>
 </div>
 @push('js')
-    @auth
     <script>
-        require(['hdjs','vue','axios', 'MarkdownIt', 'marked', 'highlight'],function(hdjs,Vue,axios, MarkdownIt, marked){
-           var vm= new  Vue({
-                el:'#app',
-                data:{
+        require(['hdjs', 'vue', 'axios', 'MarkdownIt', 'marked', 'highlight'], function (hdjs, Vue, axios, MarkdownIt, marked) {
+            var vm = new Vue({
+                el: '#app',
+                data: {
                     comment: {content: ''},//当前评论数据
                     comments: [],//全部评论
+
                 },
-                methods:{
+                updated(){
+                    $(document).ready(function () {
+                        $('pre code').each(function (i, block) {
+                            hljs.highlightBlock(block);
+                        });
+                    });
+                },
+                methods: {
                     //第一步
-                    send(){
+                    @auth
+                    send() {
                         this.comment.content.trim() == ''
                         if (this.comment.content.trim() == '') {
                             hdjs.swal({
@@ -110,45 +122,57 @@
                                 //将 markdown 转为 html
                                 let md = new MarkdownIt();
                                 response.data.comment.content = md.render(response.data.comment.content)
-                                $(document).ready(function () {
-                                    $('pre code').each(function (i, block) {
-                                        hljs.highlightBlock(block);
-                                    });
-                                });
+
                                 //清空 vue 数据
                                 this.comment.content = '';
                                 //清空编辑器内容
                                 //选中所有内容
-                                editormd.setSelection({line:0, ch:0}, {line:9999999, ch:9999999});
+                                editormd.setSelection({line: 0, ch: 0}, {line: 9999999, ch: 9999999});
                                 //将选中文本替换成空字符串
                                 editormd.replaceSelection("");
                             })
+
+                    },
+                    zan(v){
+                        //alert(1)
+                        let url ='/home/zan/make?type=comment&id='+ v.id;
+                        //console.log(url);
+                        axios.get(url).then((response)=>{
+                            v.zan_num=response.data.zan_num;
+                            //vm.num.push(response.data.num);
+                           // console.log(vm.num);
+                        })
                     }
+                    @endauth
                 },
-                mounted(){
+                mounted() {
+                    @auth
                     hdjs.editormd("editormd", {
                         width: '100%',
                         height: 300,
-                        toolbarIcons : function() {
+                        toolbarIcons: function () {
                             return [
-                                "undo","redo","|",
-                                "bold", "del", "italic", "quote","|",
+                                "undo", "redo", "|",
+                                "bold", "del", "italic", "quote", "|",
                                 "list-ul", "list-ol", "hr", "|",
                                 "link", "hdimage", "code-block", "|",
                                 "watch", "preview", "fullscreen"
                             ]
                         },
                         //后台上传地址，默认为 hdjs配置项window.hdjs.uploader
-                        server:'',
+                        server: '',
                         //editor.md库位置
                         path: "{{asset('org/hdjs')}}/package/editor.md/lib/",
+
                         //第三步
                         //监听编辑器变化
                         onchange: function () {
                             //给 vu 对象中 comment 属性中 content 设置值
                             vm.$set(vm.comment, 'content', this.getValue());
                         }
+
                     });
+                    @endauth
                     //第四步
                     //请求当前文章所有评论数据
                     axios.get('{{route("home.comment.index",['article_id'=>$article['id']])}}')
@@ -159,16 +183,14 @@
                             //console.log(this.comments);
                             this.comments.forEach((v, k) => {
                                 v.content = md.render(v.content)
+
+                                //console.log(v.zan.length);
                             })
-                            $(document).ready(function () {
-                                $('pre code').each(function (i, block) {
-                                    hljs.highlightBlock(block);
-                                });
-                            });
+
                         });
                 }
             });
         })
     </script>
-    @endauth
+
 @endpush

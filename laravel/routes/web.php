@@ -38,6 +38,15 @@ Route::group(['prefix'=>'member','namespace'=>'Member','as'=>'member.'],function
     Route::get('attention/{user}','UserController@attention')->name('attention');
     Route::get('interestList/{user}','UserController@interestList')->name('interestList');
     Route::get('fanList/{user}','UserController@fanList')->name('fanList');
+    //收藏
+    Route::get('collect/make','CollectController@make')->name('collect.make');
+    Route::get('collect/index{user}','CollectController@index')->name('collect.index');
+    //我的点赞user
+    Route::get('my_zan/{user}','UserController@myZan')->name('my_zan');
+    //我的通知
+    Route::get('notify/{user}','NotifyController@index')->name('notify');
+    Route::get('notify/show/{notify}','NotifyController@show')->name('notify.show');
+
 
 });
 //后台管理
@@ -53,4 +62,8 @@ Route::group(['prefix'=>'home','namespace'=>'Home','as'=>'home.'],function (){
     Route::resource('article','ArticleController');
     //评论路由
     Route::resource('comment','CommentController');
+
+    //点赞/取消赞
+    Route::get('zan/make','ZanController@make')->name('zan.make');
+    //Route::get('zan/index')
 });
